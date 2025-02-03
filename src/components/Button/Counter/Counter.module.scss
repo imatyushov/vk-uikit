@@ -1,0 +1,77 @@
+.counter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Размеры */
+.small {
+  height: 16px;
+  width: 16px;
+  font-size: 11px;
+}
+
+.medium {
+  height: 20px;
+  width: 20px;
+  font-size: 13px;
+}
+
+.large {
+  height: 24px;
+  width: 24px;
+  font-size: 15px;
+}
+
+
+/* Варианты */
+.primary {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.secondary {
+  background-color: rgba(131, 102, 86, 0.12);
+}
+
+
+/* Анимация */
+.pulse {
+  background-color: inherit;
+  z-index: 0;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+  }
+
+  &.active {
+    &:before, &:after {
+      animation-name: pulse;
+      animation-duration: 1s;
+    }
+
+    &:after {
+      animation-delay: 0.25s;
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
