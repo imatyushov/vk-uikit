@@ -37,7 +37,7 @@ export const Button = (props: ButtonProps) => {
     className,
   )
 
-  const handleOnChange = (e: MouseEvent) => {
+  const handleOnChange = (e) => {
     setCount(prev => prev + 1);
     if (onClick) onClick(e);
   }
