@@ -6,6 +6,7 @@ export const useButtonContext = () => {
   const context = useContext(ButtonContext);
 
   if(!context) {
+    
     throw new Error('Компонет должен быть использован внутри Button')
   }
 
